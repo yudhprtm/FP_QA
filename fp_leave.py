@@ -32,7 +32,7 @@ class admin(unittest.TestCase):
         time.sleep(1)
         browser.find_element(By.ID,"btnAdd").click()
         time.sleep(1)
-        browser.find_element(By.ID,"leaveType_txtLeaveTypeName").send_keys("CAN - Istri Melahirkan")
+        browser.find_element(By.ID,"leaveType_txtLeaveTypeName").send_keys("CAN - Matternity")
         time.sleep(2)
         browser.find_element(By.XPATH,'//*[@id="leaveType_excludeIfNoEntitlement"]').click()
         time.sleep(1)
@@ -41,7 +41,7 @@ class admin(unittest.TestCase):
 
         response_data = browser.find_element(By.ID,"resultTable").text
         
-        self.assertIn("US - Istri Melahirkan",response_data)
+        self.assertIn("CAN - Matternity",response_data)
 
 
     def tearDown(self): 
